@@ -32,9 +32,8 @@ const Pelicula = sequelize.define('Pelicula', {
 
 // Sincronizar Base de Datos
 sequelize.sync()
-    .then(() => console.log('👍 Base de datos SQLite conectada con éxito.'))
+    .then(() => console.log('👍 Base de datos PostgreSQL conectada con éxito en Render.'))
     .catch(err => console.error('❌ Error de sincronización:', err));
-
 
 // ========================================================
 // MIDDLEWARE: Validación de JWT (Autorización)
