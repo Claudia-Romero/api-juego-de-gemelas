@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
+ "dependencies": {
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "sequelize": "^6.37.8",
