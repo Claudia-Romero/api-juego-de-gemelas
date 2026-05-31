@@ -9,10 +9,16 @@ const FIRMA_SECRETA = 'mi_clave_secreta_super_segura_123';
 
 app.use(express.json());
 
-// 1. CONFIGURACIÓN DE LA BASE DE DATOS (SQLite)
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './database.sqlite',
+// 1. CONFIGURACIÓN DE LA BASE DE DATOS (Cambiada a PostgreSQL para Render)
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false // Súper importante para que Render no te bloquee la conexión
+        }
+    },
     logging: false
 });
 
