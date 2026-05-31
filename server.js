@@ -65,6 +65,16 @@ const validarJWT = (req, res, next) => {
     }
 };
 
+// ========================================================
+// RUTA RAÍZ: Mensaje de bienvenida para la página principal
+// ========================================================
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "¡Bienvenido a la API de Juego de Gemelas! Las rutas disponibles son /api/peliculas y /api/login",
+        status: "Online"
+    });
+});
 
 // ========================================================
 // RUTA NUEVA: Login (Generación de Token JWT)
